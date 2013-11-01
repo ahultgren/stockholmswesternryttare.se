@@ -1,0 +1,27 @@
+# Basic WP stuff
+.htaccess
+wp-config.php
+src/wordpress/wp-content/blogs.dir
+src/wordpress/wp-content/uploads
+src/wordpress/wp-content/*uploads/*
+
+# W3 stuff
+src/wordpress/wp-content/w3-total-cache*
+src/wordpress/wp-content/w3tc-*/**/**
+src/wordpress/wp-content/db.php
+src/wordpress/wp-content/advanced-cache.php
+src/wordpress/wp-content/object-cache.php
+
+# Other generated stuff
+sitemap.xml
+sitemap.xml.gz
+readme.html
+license.txt
+*.log
+local-config.php
+
+# Theme stuff, edit theme name!
+src/wordpress/wp-content/themes/sw2/style.css
+src/wordpress/wp-content/themes/sw2/dist/*.js
+src/wordpress/wp-content/themes/sw2/dist/*.css
+src/wordpress/wp-content/themes/sw2/grunt/node_modules
