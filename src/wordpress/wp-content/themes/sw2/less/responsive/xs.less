@@ -24,24 +24,30 @@ h3 {
 
   .topnav {
     .logo {
+      background: url("img/logo.png") center center no-repeat;
       float: left;
-      height: 30px;
+      height: 41px;
+      width: 43px;
+      margin: 5px 20px 5px 0;
       overflow: hidden;
       text-indent: 900px;
-      line-height: 30px;
+      line-height: 41px;
     }
 
-    ul {
+    .menu {
+      display: none;
       margin: 0;
       padding: 0;
+      clear: both;
       list-style: none;
 
       li {
-        float: left;
+        padding: 0;
 
         a {
+          border-bottom: 1px solid;
           display: block;
-          padding: 10px 20px;
+          padding: 15px 20px 10px 0;
           color: #fff;
           text-decoration: none;
         }
@@ -50,6 +56,41 @@ h3 {
         a:hover {
           color: @primary;
         }
+
+        &:last-child a {
+          border-bottom: 0;
+        }
+      }
+    }
+
+    // Show menu when toggled
+    .menu-toggle:checked ~ .menu-main-menu-container .menu {
+      display: block;
+    }
+
+    .menu-toggle {
+      display: none;
+    }
+
+    .menu-toggle-label {
+      background: @primary;
+      box-shadow:
+        0 0.40em 0 0 @primary,
+        0 .8em 0 0 @primary;
+      width: 1em;
+      height: 0.20em;
+      margin: 17px 0 0;
+      float: right;
+      position: relative;
+      cursor: pointer;
+
+      // Hack to make the whole area clickable
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 16px;
       }
     }
   }
@@ -68,6 +109,10 @@ h3 {
 /* Main
 ============================================================================= */
 
+.news,
+.events {
+  margin-top: @margin;
+}
 
 /* hentry
 ============================================================================= */
@@ -118,13 +163,13 @@ h3 {
     }
 
     .prev {
-      border-color: transparent fade(@primary, 50%) transparent transparent;
+      border-color: transparent @primary transparent transparent;
       border-width: 10px 17px 10px 0;
       float: left;
     }
 
     .next {
-      border-color: transparent transparent transparent fade(@primary, 50%);
+      border-color: transparent transparent transparent @primary;
       border-width: 10px 0 10px 17px;
       float: right;
     }
@@ -279,6 +324,15 @@ h3 {
   background-color: @gray;
   padding: @grid-gutter-width 0;
   margin-top: @grid-gutter-width;
+
+  .slogan {
+    margin-top: 2.6em;
+  }
+
+  .credits {
+    margin-top: 2em;
+    font-style: italic;
+  }
 }
 
 .global-width {

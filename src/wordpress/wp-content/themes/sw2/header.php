@@ -11,6 +11,7 @@
 <head>
   <meta charset="<?php bloginfo('charset'); ?>" />
   <meta name="viewport" content="width=device-width,minimum-scale=1.0,initial-scale=1.0" />
+  <link rel="shortcut icon" href="<?php bloginfo('url'); ?>/favicon.png" />
   <title><?php wp_title('|', true, 'right'); ?><?php bloginfo('name'); ?></title>
   <link rel="profile" href="http://gmpg.org/xfn/11" />
   <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
@@ -25,7 +26,9 @@
 <body <?php body_class(); ?>>
   <header class="head" role="banner">
     <nav class="topnav col-xs-12 global-width clearfix" role="navigation">
-      <a class="logo col-xs-2" href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a>
+      <a class="logo" href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a>
+      <label for="menu-toggle" class="menu-toggle-label"></label>
+      <input type="checkbox" class="menu-toggle" id="menu-toggle">
       <?php wp_nav_menu(array('theme_location' => 'primary')); ?>
     </nav>
     <?php if(is_page() && has_post_thumbnail()) {

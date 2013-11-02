@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<section class="main row global-width" id="main">
+<section class="main row global-width clearfix" id="main">
   <?php the_loop(array('parts/single', 'page'));
 
   $news = new WP_Query(array(

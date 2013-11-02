@@ -6,8 +6,16 @@
   @import "responsive/sm";
 }
 
-@media screen and (min-width: @screen-lg) {
+@media screen and (min-width: @screen-sm) {
+  @import "responsive/md";
+}
+
+@media screen and (min-width: @screen-md) {
   @import "responsive/lg";
+}
+
+@media screen and (min-width: @screen-lg) {
+  @import "responsive/xl";
 }
 
 @import "responsive/print";
