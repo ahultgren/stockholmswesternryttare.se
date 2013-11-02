@@ -1,31 +1,42 @@
 /* Dimensions
 ============================================================================= */
-@max-width: 1106px;
-@large-breakpoint: 1106px;
 
+@screen-xs: 480px;
+@screen-sm: 768px;
+@screen-md: 992px;
+@screen-lg: 1200px;
+
+@max-width: @screen-lg;
+@grid-gutter-width: 30px;
 
 /* Font sizes
 ============================================================================= */
-// Calculate em's: (target size in pixels)/(browser base size (16px))/global size
-@sText: 16/16*1em;
-@sH1: 20/16/@sText;
-@sH2: @sH1;
-@sH3: 15/16/@sText;
 
-@lText: 20/16*1em;
-@lH1: 50/16/@lText;
-@lH2: 35/16/@lText;
-@lH3: @lH2;
+// Calculate em's: (target size in pixels)/(browser base size (16px))/global size
+@sText: 16/16 + 0em;
+@sH1: 30/16 + 0em;
+@sH2: 20/16 + 0em;
+@sH3: 20/16 + 0em;
+
+@lText: 16/16 + 0em;
+@lH1: 40/16 + 0em;
+@lH2: 30/16 + 0em;
+@lH3: 20/16 + 0em;
 
 
 /* Font families
 ============================================================================= */
+
 @fBody: Helvetica Neue, Arial, sans-serif;
 @fHeading: Helvetica Neue, Arial, sans-serif;
 
 
 /* Colors
 ============================================================================= */
+
 @default: #555;
-@primary: #059;
+@primary: gold;
 @secondary: #f90;
+@white: #fff;
+@black: #000;
+@gray: #333;

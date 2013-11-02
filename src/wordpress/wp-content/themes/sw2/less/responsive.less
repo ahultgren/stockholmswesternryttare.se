@@ -1,9 +1,13 @@
 @media screen and (min-width: 0) {
-  @import "responsive/small";
+  @import "responsive/xs";
 }
 
-@media screen and (min-width: @large-breakpoint) {
-  @import "responsive/large";
+@media screen and (min-width: @screen-xs) {
+  @import "responsive/sm";
+}
+
+@media screen and (min-width: @screen-lg) {
+  @import "responsive/lg";
 }
 
 @import "responsive/print";

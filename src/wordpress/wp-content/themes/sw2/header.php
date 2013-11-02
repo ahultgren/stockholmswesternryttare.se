@@ -24,11 +24,11 @@
 
 <body <?php body_class(); ?>>
   <header class="head" role="banner">
-    <<?php sitetitle_tag(); ?> class="sitetitle">
-      <a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a>
-    </<?php sitetitle_tag(); ?>>
-
-    <nav class="topnav" role="navigation">
+    <nav class="topnav col-xs-12 global-width clearfix" role="navigation">
+      <a class="logo col-xs-2" href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a>
       <?php wp_nav_menu(array('theme_location' => 'primary')); ?>
     </nav>
+    <?php if(is_page() && has_post_thumbnail()) {
+      super_header();
+    } ?>
   </header>
