@@ -11,7 +11,7 @@
       </div>
       <div class="col-xs-12 col-sm-5 col-md-4">
         <p class="slogan">
-          "Sluta dröm, bli en cowboy"
+          "Sluta dröm, bli cowboy"
         </p>
         <p class="credits">
           Site by <a href="http://andreashultgren.se">Andreas Hultgren</a>

@@ -16,7 +16,7 @@
   )); ?>
 
   <div class="news col-xs-12 col-md-8">
-    <?php the_loop($news, array('parts/list', 'news')); ?>
+    <?php the_loop($news, array('parts/list', 'post')); ?>
   </div>
   <div class="events col-xs-12 col-md-4">
     <h2>Evenemang</h2>
