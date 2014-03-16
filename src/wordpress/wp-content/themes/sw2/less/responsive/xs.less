@@ -1,6 +1,16 @@
 body {
+  background-color: @almost-white;
   font: @sText @fBody;
   line-height: 1.7;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: @fHeading;
+  font-weight: normal;
+
+  &:first-child {
+    margin-top: 0;
+  }
 }
 
 h1 {
@@ -20,15 +30,16 @@ h3 {
 ============================================================================= */
 
 .head {
-  background-color: #333;
+  background-color: @gray;
 
   .topnav {
     .logo {
       background: url("img/logo.png") center center no-repeat;
+      background-size: 100%;
       float: left;
       height: 41px;
-      width: 43px;
-      margin: 5px 20px 5px 0;
+      width: 24px;
+      margin: 5px 0 5px;
       overflow: hidden;
       text-indent: 900px;
       line-height: 41px;
@@ -45,10 +56,10 @@ h3 {
         padding: 0;
 
         a {
-          border-bottom: 1px solid @white;
+          border-bottom: 1px solid;
           display: block;
           padding: 15px 20px 10px 0;
-          color: #fff;
+          color: @white;
           text-decoration: none;
         }
 
@@ -64,7 +75,7 @@ h3 {
     }
 
     // Show menu when toggled
-    .menu-toggle:checked ~ .menu-main-menu-container .menu {
+    .menu-toggle:checked ~ div > .menu {
       display: block;
     }
 
@@ -101,25 +112,45 @@ h3 {
     background-position: center center;
     background-repeat: no-repeat;
     border-top: 1px solid fade(@white, 40%);
+    border-bottom: 1px solid fade(@black, 40%);
     height: 0;
-    padding-bottom: 66%;
+    padding-bottom: 50%;
+    position: relative;
+
+    h1 {
+      max-width: 50%;
+      margin-top: 0;
+      margin-left: 20px;
+      position: absolute;
+      top: 10%;
+      font-family: Clarendon, serif;
+      line-height: 1.1;
+      text-shadow: 3px 3px 0 #fff, 2px 2px 10px #fff;
+      font-size: 2.2em;
+      text-transform: uppercase;
+      font-weight: 900;
+    }
   }
 }
 
 /* Main
 ============================================================================= */
 
-.news,
-.events {
-  margin-top: @margin;
+.main {
+  background: @white;
+  padding: 40px 20px 40px;
 }
+
 
 /* hentry
 ============================================================================= */
 
 .hentry {
+  margin-bottom: 40px;
+
   header {
-    h1, h2, h3 {
+    .title {
+      margin-top: 0;
       margin-bottom: 0.3em;
     }
 
@@ -137,13 +168,40 @@ h3 {
     }
 
     .when {
-      background: @gray;
-      color: @white;
+      background: @almost-white;
       padding: 5px 10px 3px;
     }
   }
+
   img {
     max-width: 100%;
+  }
+
+  .content {
+    ol {
+      counter-reset: ol;
+
+      li {
+        list-style: none;
+        position: relative;
+
+        &:before {
+          content: counter(ol);
+          counter-increment: ol;
+          position: absolute;
+          left: -18px;
+          font-family: @fHeading;
+        }
+      }
+
+      ol {
+        counter-reset: olol; //## is this correct?
+        li:before {
+          content: counter(olol);
+          counter-increment: olol;
+        }
+      }
+    }
   }
 
   footer {
@@ -152,103 +210,56 @@ h3 {
 }
 
 
-/* Calendar
+
+/* Sidebar
 ============================================================================= */
 
-.container {
-  margin-top: 20px;
+.sidebar {
+  aside {
+    margin-top: 40px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
 }
 
-.responsive-calendar {
-  .controls {
-    height: 20px;
-    text-align: center;
 
-    a {
-      cursor: pointer;
-    }
+/* Events
+============================================================================= */
 
-    h4 {
-      display: inline;
-    }
-
-    .next,
-    .prev {
-      border-style: solid;
-      margin-top: 2px;
-    }
-
-    .prev {
-      border-color: transparent @primary transparent transparent;
-      border-width: 10px 17px 10px 0;
-      float: left;
-    }
-
-    .next {
-      border-color: transparent transparent transparent @primary;
-      border-width: 10px 0 10px 17px;
-      float: right;
-    }
+.events {
+  .title {
+    margin-bottom: 0;
   }
 
-  .day-headers, .days {
-  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 
-  .day {
-    display: block;
-    width: 100/7%;
-    float: left;
-    position: relative;
-    text-align: center;
-
-    a {
-      color: @black;
-      display: block;
-      cursor: pointer;
-      padding: 20% 0 20% 0;
-
-      &:hover {
-        //.box-shadow( inset 0px 0px 0px 1px rgba(170, 170, 170, 1) );
-        background-color: #eee;
-        text-decoration: none;
-      }
+    li {
+      padding: 0;
     }
 
-    &.header {
-      border-bottom: 1px gray solid;
-    }
+    .hentry {
+      margin-bottom: 0;
 
-    &.active {
-      a {
-        background-color: @primary;
-        color: @white;
+      header {
+        .title {
+          line-height: 1.3;
+          margin-bottom: 11px;
+        }
 
-        &:hover {
-          background-color: lighten(@primary, 10%);
+        .when {
+          background-color: @primary;
+          float: right;
+          clear: right;
+          font-size: .6em;
+          line-height: 23px;
+          text-align: right;
         }
       }
-
-      .not-current {
-        background-color: lighten(@primary, 30%);
-        color: @white;
-
-        &:hover {
-          background-color: lighten(@primary, 40%);
-        }
-      }
-    }
-
-    &.not-current {
-      a {
-        color: #ddd;
-      }
-    }
-
-    .badge {
-      position: absolute;
-      top: -4px;
-      right: -8px;
-      z-index: 1;
     }
   }
 }
@@ -288,6 +299,7 @@ h3 {
     animation: rotation .6s infinite linear;
   }
 }
+
 #lighty-container {
   margin: @grid-gutter-width/2;
   overflow: hidden;
@@ -338,21 +350,26 @@ h3 {
 
 .foot {
   background-color: @gray;
-  padding: @grid-gutter-width 0;
+  padding: 20px 10px 15px;
   margin-top: @grid-gutter-width;
   color: @white;
 
-  .slogan,
+  a {
+    margin-left: 10px;
+    text-decoration: none;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .contact {
+    float: left;
+  }
+
   .credits {
+    float: right;
     text-align: right;
-  }
-
-  .slogan {
-    margin-top: 2.6em;
-  }
-
-  .credits {
-    margin-top: 2em;
     font-style: italic;
   }
 }

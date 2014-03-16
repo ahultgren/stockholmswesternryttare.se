@@ -6,7 +6,9 @@ add_image_size('lightbox', 1600, 800);
 add_image_size('featured-post', 600, 300, true);
 
 add_theme_support('automatic-feed-links');
-
+add_theme_support('html5', array(
+  'search-form', 'comment-form', 'comment-list',
+));
 
 // Menu
 register_nav_menus(array(
@@ -86,7 +88,13 @@ function super_header () {
   $img = wp_get_attachment_image_src($id, 'super-header');
 
   if($img) { ?>
-    <div class="super-header" style="background-image: url('<?php echo $img[0]; ?>');"></div>
+    <div class="super-header" style="background-image: url('<?php echo $img[0]; ?>');">
+      <div class="global-width">
+        <h1 class="title">
+          <?php is_page() ? the_title() : wp_title(); ?>
+        </h1>
+      </div>
+    </div>
   <?php }
 }
 

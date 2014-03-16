@@ -34,7 +34,6 @@ module.exports = function(grunt) {
           separator: ';'
         },
         src: [
-          '../js/libs/responsive-calendar.min.js',
           '../js/main.js',
           '../js/lightbox.js'
         ],
