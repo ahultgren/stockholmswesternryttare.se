@@ -46,7 +46,7 @@ function custom_init () {
     'rewrite' => array('slug' => 'evenemang'),
     'hierarchical' => false,
     'menu_position' => null,
-    'supports' => array('title', 'editor', 'thumbnail', 'excerpt')
+    'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'comments')
   );
 
   register_post_type('event', $args);
