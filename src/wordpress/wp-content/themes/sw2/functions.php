@@ -81,17 +81,19 @@ function sitetitle_tag () {
   echo is_front_page() ? 'h1' : 'p';
 }
 
-function super_header () {
+function super_header ($pid = null) {
   global $post;
 
-  $id = get_post_thumbnail_id($post->ID);
+  $pid = $pid ? $pid : $post->ID;
+
+  $id = get_post_thumbnail_id($pid);
   $img = wp_get_attachment_image_src($id, 'super-header');
 
   if($img) { ?>
     <div class="super-header" style="background-image: url('<?php echo $img[0]; ?>');">
       <div class="global-width">
         <h1 class="title">
-          <?php is_page() ? the_title() : wp_title(); ?>
+          <?php echo is_page() || is_home() ? get_the_title($pid) : wp_title(); ?>
         </h1>
       </div>
     </div>

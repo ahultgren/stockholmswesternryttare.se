@@ -1,4 +1,4 @@
-<?php get_header(); 
+<?php get_header();
 global $query_string;
 $args;
 parse_str($query_string, $args);

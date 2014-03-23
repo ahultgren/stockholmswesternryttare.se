@@ -31,7 +31,10 @@
       <input type="checkbox" class="menu-toggle" id="menu-toggle">
       <?php wp_nav_menu(array('theme_location' => 'primary')); ?>
     </nav>
-    <?php if(has_post_thumbnail()) {
-      super_header();
+    <?php
+    $id = is_home() ? get_option('page_for_posts') : null;
+
+    if(has_post_thumbnail($id)) {
+      super_header($id);
     } ?>
   </header>
