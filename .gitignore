@@ -24,4 +24,6 @@ local-config.php
 src/wordpress/wp-content/themes/sw2/style.css
 src/wordpress/wp-content/themes/sw2/dist/*.js
 src/wordpress/wp-content/themes/sw2/dist/*.css
-src/wordpress/wp-content/themes/sw2/grunt/node_modules
+src/wordpress/wp-content/themes/sw2/grunt/node_modules/*
+
+node_modules

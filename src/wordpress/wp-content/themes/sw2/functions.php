@@ -127,7 +127,7 @@ function the_loop ($list = null, $iterator = null) {
     // Loop
     while($list->have_posts()) {
       $list->the_post();
-      get_template_part($iterator[0], $iterator[1]);
+      get_template_part($iterator[0], isset($iterator[1]) ? $iterator[1] : null);
     }
   }
 
