@@ -377,3 +377,24 @@ h3 {
 .global-width {
   margin: 0;
 }
+
+
+/* Widget images
+============================================================================= */
+.widget_sp_image {
+  text-align: center;
+
+  & + .widget_sp_image {
+    padding-top: 20px;
+  }
+
+  .widgettitle,
+  .widget_sp_image-description {
+    display: none;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}

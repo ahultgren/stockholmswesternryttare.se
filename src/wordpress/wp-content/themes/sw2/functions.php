@@ -10,6 +10,13 @@ add_theme_support('html5', array(
   'search-form', 'comment-form', 'comment-list',
 ));
 
+register_sidebar(array(
+  'name' => 'All Terrain Trail',
+  'id' => 'att-sidebar',
+  'before_widget' => '<section id="%1$s" class="widget %2$s">',
+  'after_widget'  => '</section>',
+));
+
 // Menu
 register_nav_menus(array(
   'primary' => 'Main menu'
